@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="forms-container">
+        <div class="singin-singup">
+            <!--Form Sing In-->
+            <form [formGroup]="Login" (ngSubmit)="SingIn()" class="sing-in-form">
+
+                <h2 class="title">Sing In</h2>
+
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" formControlName="username">
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" formControlName="password">
+                </div>
+                <mat-error *ngIf="
+                Login.get('password').invalid &&
+                Login.get('password').hasError('required')">
+
+                    Password is <strong>required</strong>
+                </mat-error>
+
+                <button type="submit" class="btn solid">Login</button>
+
+                <p class="social-text">SingIn with social plataforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </form>
+
+            <!--Form Sing Up-->
+            <form [formGroup]="Register" (ngSubmit)="SingUp(Register.value)" class="sing-up-form">
+
+                <h2 class="title">Sing Up</h2>
+
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" formControlName="username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" formControlName="email">
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" formControlName="password">
+                </div>
+                <button type="submit" class="btn solid">Sing Up</button>
+
+                <p class="social-text">Sing Up with social plataforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!----------------panel Text---------------------->
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>!Hi, new here?</h3>
+                <p>If you want to learn in an easy and fun way, sign up to become part of this incredible world.</p>
+                <button class="btn transparent" id="sing-up-btn" (click)="modeSingUp()">Sing Up</button>
+            </div>
+
+            <img src="../../../../assets/img/auth/education.svg" class="image" alt="">
+        </div>
+
+        <div class="panel rigth-panel">
+            <div class="content">
+                <h3>Do you already know us?</h3>
+                <p>If you are already part of this great world of learning and fun, log in to continue increasing your desire to know something new.</p>
+                <button class="btn transparent" id="sing-in-btn" (click)="modeSingIn()">Sing In</button>
+            </div>
+
+            <img src="../../../../assets/img/auth/Bookshelves.svg" class="image" alt="">
+        </div>
+    </div>
+</div>
