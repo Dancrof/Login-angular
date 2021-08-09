@@ -1,0 +1,79 @@
+.footer {
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #393E46;
+}
+
+.footer h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.redes {
+    text-align: center;
+}
+
+.footer .redes a {
+    color: black;
+    text-decoration: none;
+}
+
+.fa-github {
+    color: #52006A;
+    background: #fff;
+}
+
+
+/*52006A*/
+
+.fa-facebook-f {
+    color: #fff;
+    background: #125D98;
+}
+
+.fa-twitter {
+    color: #fff;
+    background: #0A81AB;
+}
+
+.fa-instagram {
+    color: #fff;
+    background: #D83A56;
+}
+
+.fa-telegram-plane {
+    color: #fff;
+    background: #1768AC;
+}
+
+.footer .redes i {
+    font-size: 1rem;
+    padding: 0.3rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    line-height: 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.footer .redes i:hover {
+    border-radius: 50%;
+}
+
+@media (max-width: 954px) {
+    .footer {
+        flex-direction: column;
+    }
+    .footer h4 {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,59 @@
+<div class="sidebar" [ngClass]="{'active_Menu': hideMenu == false}">
+    <!------------------Logo-------------------------->
+    <div class="logo_content">
+        <div class="logo">
+            <i class='bx bx-movie-play'></i>
+            <div class="logo_name">Movienopolis</div>
+        </div>
+        <i class='bx bx-menu-alt-right' id="btn" (click)="hideMenu = !hideMenu"></i>
+    </div>
+    <!------------------Navbar-------------------------->
+    <ul class="nav_list">
+        <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search..">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-home-alt'></i>
+                <span class="links_name">Panel inicial</span>
+            </a>
+            <span class="tooltip">Panel inicial</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Categoria</span>
+            </a>
+            <span class="tooltip">Categoria</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-message-dots'></i>
+                <span class="links_name">Sugerencias</span>
+            </a>
+            <span class="tooltip">Sugerencias</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-support'></i>
+                <span class="links_name">Soporte</span>
+            </a>
+            <span class="tooltip">Soporte</span>
+        </li>
+    </ul>
+    <!------------------Profile-------------------------->
+    <div class="profile_content">
+        <div class="profile">
+            <div class="profile_details">
+                <img src="../../../assets/img/profile/profile.png" alt="">
+                <div class="name_job">
+                    <div class="name">Bryan andres</div>
+                    <div class="job">Client</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out-circle' id="log_out"></i>
+        </div>
+    </div>
+</div>
