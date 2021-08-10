@@ -7,22 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  //[ngClass]="{'active_Menu': hideMenu == false}
-  //(click)="hideMenu = !hideMenu"
 
+  // mostrar y ocultar sub_menu y navbar
   hideMenu = false;
+  deploySubMenu = true;
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  /*deployCategory(){
-    let arrow = document.querySelectorAll(".arrow");
-    for (let i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e)=>{
-      let arrowParent = e.target.parentElement.parentElement;
-      arrowParent.classList.toggle("showMenu");
-      });
-    }
-  }*/
 }

@@ -13,13 +13,13 @@
                 <li><a class="link_name" href="#">Panel Inicial</a></li>
             </ul>
         </li>
-        <li>
+        <li [ngClass]="{'showMenu':deploySubMenu == false}">
             <div class="iocn-link">
                 <a href="#">
                     <i class='bx bx-filter'></i>
                     <span class="link_name">Categoria</span>
                 </a>
-                <i class='bx bxs-chevron-down arrow'></i>
+                <i class='bx bxs-chevron-down arrow' (click)="deploySubMenu = !deploySubMenu"></i>
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Categoria</a></li>
