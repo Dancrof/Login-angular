@@ -1,59 +1,81 @@
-<div class="sidebar" [ngClass]="{'active_Menu': hideMenu == false}">
-    <!------------------Logo-------------------------->
-    <div class="logo_content">
-        <div class="logo">
-            <i class='bx bx-movie-play'></i>
-            <div class="logo_name">Movienopolis</div>
-        </div>
-        <i class='bx bx-menu-alt-right' id="btn" (click)="hideMenu = !hideMenu"></i>
+<div class="sidebar" [ngClass]="{'close': hideMenu == false}">
+    <div class="logo-details">
+        <i class='bx bx-movie-play' (click)="hideMenu = !hideMenu"></i>
+        <span class="logo_name">Movienopolis</span>
     </div>
-    <!------------------Navbar-------------------------->
-    <ul class="nav_list">
-        <li>
-            <i class='bx bx-search'></i>
-            <input type="text" placeholder="Search..">
-            <span class="tooltip">Search</span>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-home-alt'></i>
-                <span class="links_name">Panel inicial</span>
-            </a>
-            <span class="tooltip">Panel inicial</span>
-        </li>
+    <ul class="nav-links">
         <li>
             <a href="#">
                 <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Categoria</span>
+                <span class="link_name">Panel Inicial</span>
             </a>
-            <span class="tooltip">Categoria</span>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Panel Inicial</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-filter'></i>
+                    <span class="link_name">Categoria</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Categoria</a></li>
+                <li><a href="#">Acion</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Terror</a></li>
+                <li><a href="#">Anime</a></li>
+            </ul>
         </li>
         <li>
             <a href="#">
                 <i class='bx bx-message-dots'></i>
-                <span class="links_name">Sugerencias</span>
+                <span class="link_name">Sugerencias</span>
             </a>
-            <span class="tooltip">Sugerencias</span>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Sugerencias</a></li>
+            </ul>
         </li>
         <li>
             <a href="#">
                 <i class='bx bx-support'></i>
-                <span class="links_name">Soporte</span>
+                <span class="link_name">Soporte</span>
             </a>
-            <span class="tooltip">Soporte</span>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Soporte</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-library'></i>
+                <span class="link_name">Biblioteca</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Biblioteca</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog'></i>
+                <span class="link_name">Setting</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Setting</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="../../../assets/img/profile/profile.png" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">Bryan Andres</div>
+                    <div class="job">email</div>
+                </div>
+                <i class='bx bx-log-out'></i>
+            </div>
         </li>
     </ul>
-    <!------------------Profile-------------------------->
-    <div class="profile_content">
-        <div class="profile">
-            <div class="profile_details">
-                <img src="../../../assets/img/profile/profile.png" alt="">
-                <div class="name_job">
-                    <div class="name">Bryan andres</div>
-                    <div class="job">Client</div>
-                </div>
-            </div>
-            <i class='bx bx-log-out-circle' id="log_out"></i>
-        </div>
-    </div>
 </div>
