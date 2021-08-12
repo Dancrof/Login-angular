@@ -1,12 +1,7 @@
 <div class="container_grid">
     <div class="container">
         <app-navbar></app-navbar>
-        <div class="home_content">
-            <div class="card_principal">
-                <div class="card_text">
-                    <p>Disfruta de viendo peliculas en cualquier lugar con<br><br> <span>Movienopolis</span></p>
-                </div>
-            </div>
+        <div class="catalogue_content">
             <div class="card_list" *ngFor="let mo of movies; let i=index">
                 <div>
                     <img [src]="mo.image" [alt]="mo.title">
