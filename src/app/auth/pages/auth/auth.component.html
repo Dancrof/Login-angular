@@ -2,29 +2,26 @@
     <div class="forms-container">
         <div class="singin-singup">
             <!--Form Sing In-->
-            <form [formGroup]="Login" (ngSubmit)="SingIn()" class="sing-in-form">
+            <form [formGroup]="Login" (ngSubmit)="SingIn(Login.value)" class="sing-in-form">
 
-                <h2 class="title">Sing In</h2>
+                <div class="content_title">
+                    <i class='bx bx-movie-play'></i>
+                    <h2 class="title">Movienopolis</h2>
+                </div>
 
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" formControlName="username">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" formControlName="email">
                 </div>
 
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password" formControlName="password">
                 </div>
-                <mat-error *ngIf="
-                Login.get('password').invalid &&
-                Login.get('password').hasError('required')">
-
-                    Password is <strong>required</strong>
-                </mat-error>
 
                 <button type="submit" class="btn solid">Login</button>
 
-                <p class="social-text">SingIn with social plataforms</p>
+                <p class="social-text">Iniciar sesión con plataformas sociales</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -61,7 +58,7 @@
                 </div>
                 <button type="submit" class="btn solid">Sing Up</button>
 
-                <p class="social-text">Sing Up with social plataforms</p>
+                <p class="social-text">Registrate con plataformas sociales</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -84,22 +81,22 @@
     <div class="panels-container">
         <div class="panel left-panel">
             <div class="content">
-                <h3>!Hi, new here?</h3>
-                <p>If you want to learn in an easy and fun way, sign up to become part of this incredible world.</p>
+                <h3>! Hola, nuevo aqui?</h3>
+                <p>No te pierdas la oportunidad de ver peliculas totalmete gratis con tus amigos.</p>
                 <button class="btn transparent" id="sing-up-btn" (click)="modeSingUp()">Sing Up</button>
             </div>
 
-            <img src="../../../../assets/img/auth/education.svg" class="image" alt="">
+            <img src="../../../../assets/img/auth/sing-in.svg" class="image" alt="">
         </div>
 
         <div class="panel rigth-panel">
             <div class="content">
-                <h3>Do you already know us?</h3>
-                <p>If you are already part of this great world of learning and fun, log in to continue increasing your desire to know something new.</p>
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Si ya eres parte de la plataforma, inicia sesión para seguir viendo las peliculas que mas te gustan.</p>
                 <button class="btn transparent" id="sing-in-btn" (click)="modeSingIn()">Sing In</button>
             </div>
 
-            <img src="../../../../assets/img/auth/Bookshelves.svg" class="image" alt="">
+            <img src="../../../../assets/img/auth/sing-up.svg" class="image" alt="">
         </div>
     </div>
 </div>

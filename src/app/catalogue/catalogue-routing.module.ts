@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     children:[
       {path: 'list', component: CatalogueListComponent},
-      {path: 'list/view/details', component: CatalogueDetailsComponent},
+      {path: 'list/view/details/:id', component: CatalogueDetailsComponent},
       {path: '**', redirectTo:'list'}
     ]
   }

@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/api/services/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  styleUrls: ['./auth.component.css'],
+  providers:[AuthService]
 })
 export class AuthComponent implements OnInit {
 
   //==== Inpust Auth ===========================
   Login = new FormGroup({
-    username: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required])
   });
 
   Register = new FormGroup({
-    username: new FormControl('',[Validators.required]),
+    username: new FormControl(''),
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required])
   });
@@ -28,7 +31,10 @@ export class AuthComponent implements OnInit {
     password: '1234'
   };
 
-  constructor(private router: Router) { }
+  constructor(
+    private authSvc: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -51,22 +57,41 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  SingIn(form?){
+  async SingIn(form?){
    
-    const valueUsername = this.Login.get('username').value;
-    const valuePass =  this.Login.get('password').value;
+    const {email , password} = form; 
+    //const valueEmail = this.Login.get('email').value;
+    //const valuePass =  this.Login.get('password').value;
+    const user = await this.authSvc.login(email, password);
+    if(user){
+      this.router.navigate(['/home']);
+    } else{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Email or password incorret',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
     
-    //const loginValue = form;
-    
-    if(valueUsername == this.user.username && valuePass == this.user.password){
-      this.router.navigate(['/home'])
-    }else{
-      alert('credential incorrect');
+  }
+
+  async SingUp(form?){
+    const {username , email , password} = form;
+    //const valueEmail = this.Register.get('email').value;
+    //const valuePass =  this.Register.get('password').value;
+    const user = await this.authSvc.register(email, password)
+    if(user){
+      this.router.navigate(['/home']);
+    } else{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Email in use',
+        showConfirmButton: false,
+        timer: 1500
+      });
     }
   }
-
-  SingUp(form){
-    console.log(form);
-  }
-
 }

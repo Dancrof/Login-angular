@@ -7,7 +7,7 @@ input {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #171717;
     overflow: hidden;
 }
 
@@ -17,7 +17,7 @@ input {
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #01937C, #66DE93);
+    background: linear-gradient(-45deg, #FF4848, #FF4848);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -66,10 +66,22 @@ form.sing-up-form {
     opacity: 0;
 }
 
+.content_title{
+    display: flex;
+}
+.content_title i{
+    font-size: 3rem;
+    color: #FF2626;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
 .title {
     font-size: 2.2rem;
-    color: #444;
-    margin-bottom: 10px;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 .input-field {
@@ -113,7 +125,7 @@ form.sing-up-form {
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #66DE93;
+    background-color: #FF2626;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -121,13 +133,10 @@ form.sing-up-form {
     transition: .5s;
 }
 
-.btn:hover {
-    background-color: #01937C;
-}
-
 .social-text {
     padding: .7rem 0;
     font-size: 1rem;
+    color: #EEEEEE;
 }
 
 .social-media {
@@ -138,21 +147,21 @@ form.sing-up-form {
 .social-icon {
     height: 46px;
     width: 46px;
-    border: 1px solid #333;
+    border: 1px solid #EEEEEE;
     margin: 0 0.45rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #333;
+    color: #EEEEEE;
     font-size: 1.1rem;
     border-radius: 50%;
     transition: 0.3s;
 }
 
 .social-icon:hover {
-    color: #66DE93;
-    border-color: #66DE93;
+    color: #FF2626;
+    border-color: #FF2626;
 }
 
 .panels-container {

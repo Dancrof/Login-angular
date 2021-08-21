@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueDetailsComponent implements OnInit {
 
+  movie = {
+    id: '',
+    imageUrl: '',
+    name: '',
+    sinopsis: '',
+    genero: [''],
+    idiom: '',
+    videoUrl: ''
+  };
+
   constructor() { }
 
   ngOnInit(): void {

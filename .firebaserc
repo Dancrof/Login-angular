@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "movie-angular-6ce95": {
+      "hosting": {
+        "Auth": [
+          "movie-angular-6ce95"
+        ]
+      }
+    }
+  }
+}

@@ -9,9 +9,9 @@
             </div>
             <div class="card_list" *ngFor="let mo of movies; let i=index">
                 <div>
-                    <img [src]="mo.image" [alt]="mo.title">
-                    <h4>{{mo.title}}</h4>
-                    <a href="">Ver Ahora</a>
+                    <img [src]="mo.imageUrl" [alt]="mo.name">
+                    <h4>{{mo.name}}</h4>
+                    <a [routerLink]="['/catalogue/list/view/details/',mo.id]">Ver Ahora</a>
                 </div>
             </div>
         </div>

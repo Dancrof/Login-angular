@@ -72,9 +72,9 @@
                 </div>
                 <div class="name-job">
                     <div class="profile_name">Bryan Andres</div>
-                    <div class="job">email</div>
+                    <div class="job">{{user?.email}}</div>
                 </div>
-                <i class='bx bx-log-out'></i>
+                <i class='bx bx-log-out'(click)="onlogout()"></i>
             </div>
         </li>
     </ul>
