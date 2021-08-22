@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Movie } from 'src/app/api/models/movie';
 import { MovieService } from 'src/app/api/services/movie.service';
 
 @Component({
@@ -9,16 +10,23 @@ import { MovieService } from 'src/app/api/services/movie.service';
 })
 export class HomeComponent implements OnInit {
 
-  movies = [];
+  movies: Movie[];
   constructor(
     private router: Router,
     private movieSvc: MovieService
   ) { }
 
   ngOnInit(){
-    this.movieSvc.getMovies().subscribe(movies => {
-      this.movies = movies;
+   this.getMovies();
+  }
+
+  getMovies(){
+    this.movieSvc.getMoviesAll().subscribe(data => {
+      this.movies = data;
     })
   }
 
+  wachtMovie(){
+    this.router.navigate(['/catalogue/list/view/details/']);
+  }
 }

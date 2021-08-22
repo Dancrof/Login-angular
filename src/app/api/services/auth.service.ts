@@ -3,10 +3,24 @@ import {first} from 'rxjs/operators'
 
 import { AngularFireAuth } from '@angular/fire/auth';
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
   constructor(public authFirebase: AngularFireAuth) { }
+
+  async resetPass(email: string):Promise<void>{
+    try{
+      return await this.authFirebase.sendPasswordResetEmail(email);
+    }
+    catch(error){console.log(error);}
+  }
+  
+  async sendVeridicationEmail(): Promise<void>{
+    return (await this.authFirebase.currentUser).sendEmailVerification();
+  }
 
   async login(email: string, pass: string){
     try{
@@ -18,8 +32,11 @@ export class AuthService {
     }
   }
 
-  loginGoogle(){
-    
+  async loginGoogle(){
+    try{
+      //this.authFirebase.signInWithPopup()
+    }
+    catch(error){console.log(error);}
   }
 
   loginFacebook(){
@@ -33,6 +50,7 @@ export class AuthService {
   async register(email: string, pass: string){
     try{
       const res = await this.authFirebase.createUserWithEmailAndPassword(email, pass);
+      this.sendVeridicationEmail();
       return res;
     }
     catch(error){

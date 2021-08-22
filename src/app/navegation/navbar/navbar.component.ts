@@ -5,8 +5,7 @@ import { AuthService } from 'src/app/api/services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
-  providers:[AuthService]
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
 
@@ -26,7 +25,9 @@ export class NavbarComponent implements OnInit {
   async ngOnInit(){
     this.user = await this.authSvc.refreshUser()
     if(this.user){
-      console.log('User ->', this.user);
+      console.log(this.user);
+    }else {
+      console.log('user not login');
     }
   }
 

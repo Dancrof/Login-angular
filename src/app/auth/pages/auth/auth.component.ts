@@ -7,8 +7,7 @@ import Swal from 'sweetalert2'
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css'],
-  providers:[AuthService]
+  styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
 
@@ -56,34 +55,58 @@ export class AuthComponent implements OnInit {
       container.classList.remove("sing-up-mode");
     });
   }
-
+  
+  // metodos de logearse y registrarse
+  
+  loginGoogle(){
+    
+  }
+  
   async SingIn(form?){
    
     const {email , password} = form; 
-    //const valueEmail = this.Login.get('email').value;
-    //const valuePass =  this.Login.get('password').value;
+    
     const user = await this.authSvc.login(email, password);
-    if(user){
+    if(user && user.user.emailVerified){
+     
+      // si el correo esta registrado y verificado avanza a la ruta siguiente
       this.router.navigate(['/home']);
-    } else{
+    
+    } else if(user){
+      
+      // aletra de si el correo esta verificado
       Swal.fire({
         position: 'top-end',
         icon: 'warning',
-        title: 'Email or password incorret',
+        title: 'Este email no esta verificado',
+        showConfirmButton: true
+      });
+    
+    } else {
+      
+      // alerta de si el email o pasword es incorrecto
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Email o password incorrectos',
         showConfirmButton: false,
         timer: 1500
       });
     }
+
     
   }
 
   async SingUp(form?){
     const {username , email , password} = form;
-    //const valueEmail = this.Register.get('email').value;
-    //const valuePass =  this.Register.get('password').value;
+    
     const user = await this.authSvc.register(email, password)
     if(user){
-      this.router.navigate(['/home']);
+      Swal.fire({
+        title: '🎉 !Gracias por registrarte! 🎉',
+        text: `Verifica tu email ${user.user.email} para poder logearte 👋`
+      });
+      this.Register.reset();
     } else{
       Swal.fire({
         position: 'top-end',

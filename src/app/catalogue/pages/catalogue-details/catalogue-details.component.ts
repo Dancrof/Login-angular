@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Movie } from 'src/app/api/models/movie';
+import { MovieService } from 'src/app/api/services/movie.service';
 
 @Component({
   selector: 'app-catalogue-details',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogueDetailsComponent implements OnInit {
 
-  movie = {
+  movie: Movie = {
     id: '',
     imageUrl: '',
     name: '',
@@ -17,9 +20,18 @@ export class CatalogueDetailsComponent implements OnInit {
     videoUrl: ''
   };
 
-  constructor() { }
+  constructor(private router: ActivatedRoute, private movieSvc: MovieService) { }
 
   ngOnInit(): void {
+    const id = this.router.snapshot.paramMap.get('id');
+    this.getMovie(id);
+  }
+
+  getMovie(id : string){
+    this.movieSvc.getMovie(id).subscribe(data => {
+      console.log(data);
+      this.movie = data;
+    });
   }
 
 }
