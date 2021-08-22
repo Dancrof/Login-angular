@@ -40,12 +40,18 @@ export class AuthService {
     catch(error){console.log(error);}
   }
 
-  loginFacebook(){
-    
+  async loginFacebook(){
+    try{
+      return await this.authFirebase.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    }
+    catch(error){console.log(error)}
   }
 
-  loginTwitter(){
-    
+  async loginTwitter(){
+    try{
+      return await this.authFirebase.signInWithPopup(new firebase.auth.TwitterAuthProvider())
+    }
+    catch(error){console.log(error)}
   }
 
   async register(email: string, pass: string){

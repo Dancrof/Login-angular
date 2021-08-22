@@ -72,6 +72,36 @@ export class AuthComponent implements OnInit {
       });
     }
   }
+
+  async loginFacebook(){
+    const user = await this.authSvc.loginFacebook();
+    if(user){
+      this.router.navigate(['/home']);
+    } else {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'No terminaste de logearte 😕',
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
+  }
+
+  async loginTwitter(){
+    const user = await this.authSvc.loginTwitter();
+    if(user){
+      this.router.navigate(['/home']);
+    } else {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'No terminaste de logearte 😕',
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
+  }
   
   async SingIn(form?){
    
@@ -99,7 +129,7 @@ export class AuthComponent implements OnInit {
       Swal.fire({
         position: 'top-end',
         icon: 'warning',
-        title: 'Email o password incorrectos',
+        title: 'Credenciales invalidas',
         showConfirmButton: false,
         timer: 1500
       });
@@ -122,7 +152,7 @@ export class AuthComponent implements OnInit {
       Swal.fire({
         position: 'top-end',
         icon: 'warning',
-        title: 'Email in use',
+        title: 'Email en uso',
         showConfirmButton: false,
         timer: 1500
       });
