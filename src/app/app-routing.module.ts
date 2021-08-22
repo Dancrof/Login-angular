@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CheckAuthGuard } from './guards/check-auth.guard';
 
 const routes: Routes = [
   {
@@ -13,11 +14,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    canActivateChild: [CheckAuthGuard]
   },
   {
     path: 'catalogue',
-    loadChildren: () => import('./catalogue/catalogue.module').then(m => m.CatalogueModule)
+    loadChildren: () => import('./catalogue/catalogue.module').then(m => m.CatalogueModule),
+    canActivateChild: [CheckAuthGuard]
   },
   {
     path: '**',

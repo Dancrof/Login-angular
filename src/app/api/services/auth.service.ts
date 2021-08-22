@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {first} from 'rxjs/operators'
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase/app';
 
 
 @Injectable({
@@ -34,7 +35,7 @@ export class AuthService {
 
   async loginGoogle(){
     try{
-      //this.authFirebase.signInWithPopup()
+      return await this.authFirebase.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     }
     catch(error){console.log(error);}
   }

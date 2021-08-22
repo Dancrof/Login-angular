@@ -9,6 +9,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AuthService } from './api/services/auth.service';
+
+import { CheckAuthGuard } from './guards/check-auth.guard';
 
 
 
@@ -24,7 +27,7 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService,CheckAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

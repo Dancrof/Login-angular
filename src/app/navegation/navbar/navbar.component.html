@@ -68,10 +68,10 @@
         <li>
             <div class="profile-details">
                 <div class="profile-content">
-                    <img src="../../../assets/img/profile/profile.png" alt="profileImg">
+                    <img [src]=" user?.photoURL || '../../../assets/img/profile/profile.png'" alt="profileImg">
                 </div>
                 <div class="name-job">
-                    <div class="profile_name">Bryan Andres</div>
+                    <div class="profile_name">{{user?.displayName || 'Anonimo'}}</div>
                     <div class="job">{{user?.email}}</div>
                 </div>
                 <i class='bx bx-log-out'(click)="onlogout()"></i>

@@ -184,7 +184,7 @@
 .sidebar .profile-details {
     position: fixed;
     bottom: 0;
-    width: 260px;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -203,7 +203,7 @@
 
 .sidebar .profile-details .profile-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sidebar .profile-details img {

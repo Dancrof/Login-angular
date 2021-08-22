@@ -58,8 +58,19 @@ export class AuthComponent implements OnInit {
   
   // metodos de logearse y registrarse
   
-  loginGoogle(){
-    
+  async loginGoogle(){
+    const user = await this.authSvc.loginGoogle();
+    if(user){
+      this.router.navigate(['/home']);
+    } else {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'No terminaste de logearte 😕',
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
   }
   
   async SingIn(form?){
