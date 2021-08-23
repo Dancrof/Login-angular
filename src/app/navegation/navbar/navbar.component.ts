@@ -23,12 +23,11 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   async ngOnInit(){
-    this.user = await this.authSvc.refreshUser()
-    if(this.user){
-      console.log(this.user);
-    }else {
-      console.log('user not login');
-    }
+    this.user = await this.authSvc.refreshUser();
+  }
+
+  returnHome(){
+    this.router.navigate(['/home']);
   }
 
   onlogout(){

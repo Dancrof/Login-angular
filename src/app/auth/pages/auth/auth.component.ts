@@ -36,6 +36,10 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const isLogin = this.authSvc.refreshUser();
+    if(isLogin){
+      this.router.navigate(['/home']);
+    }
   }
 
   modeSingUp(){

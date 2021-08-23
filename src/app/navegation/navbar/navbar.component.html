@@ -1,7 +1,7 @@
 <div class="sidebar" [ngClass]="{'close': hideMenu == false}">
     <div class="logo-details">
         <i class='bx bx-movie-play' (click)="hideMenu = !hideMenu"></i>
-        <span class="logo_name">Movienopolis</span>
+        <span class="logo_name" (click)="returnHome()">Movienopolis</span>
     </div>
     <ul class="nav-links">
         <li>
