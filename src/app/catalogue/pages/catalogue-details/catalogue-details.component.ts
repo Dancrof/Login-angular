@@ -29,7 +29,6 @@ export class CatalogueDetailsComponent implements OnInit {
 
   getMovie(id : string){
     this.movieSvc.getMovie(id).subscribe(data => {
-      console.log(data);
       this.movie = data;
     });
   }

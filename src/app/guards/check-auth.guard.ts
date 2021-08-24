@@ -6,6 +6,7 @@ import {take, map, tap} from 'rxjs/operators'
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../api/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,14 @@ export class CheckAuthGuard implements CanActivateChild {
     .pipe(tap(authtenticated => {
       if(!authtenticated){
         this.router.navigate(['/auth']);
-      }
+        Swal.fire({
+          position: 'top-end',
+          icon: 'warning',
+          title: 'Tu inicio de sesión expiró 😕',
+          showConfirmButton: false,
+          timer: 3000
+        });
+      } 
     })); 
   }
   

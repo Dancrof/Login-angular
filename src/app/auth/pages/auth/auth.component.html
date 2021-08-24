@@ -39,12 +39,8 @@
             <!--Form Sing Up-->
             <form [formGroup]="Register" (ngSubmit)="SingUp(Register.value)" class="sing-up-form">
 
-                <h2 class="title">Registrate</h2>
+                <h2 class="title">Registro</h2>
 
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" formControlName="username">
-                </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
                     <input type="email" placeholder="Email" formControlName="email">
@@ -54,7 +50,7 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password" formControlName="password">
                 </div>
-                <button type="submit" class="btn solid">Sing Up</button>
+                <button type="submit" class="btn solid">Registrate</button>
             </form>
 
         </div>
@@ -63,9 +59,9 @@
     <div class="panels-container">
         <div class="panel left-panel">
             <div class="content">
-                <h3>! Hola, nuevo aqui?</h3>
+                <h3>!Hola!, ¿nuevo aqui?</h3>
                 <p>No te pierdas la oportunidad de ver peliculas totalmete gratis con tus amigos.</p>
-                <button class="btn transparent" id="sing-up-btn" (click)="modeSingUp()">Sing Up</button>
+                <button class="btn transparent" id="sing-up-btn" (click)="modeSingUp()">Registrate</button>
             </div>
 
             <img src="../../../../assets/img/auth/sing-in.svg" class="image" alt="">
@@ -75,7 +71,7 @@
             <div class="content">
                 <h3>¿Ya tienes una cuenta?</h3>
                 <p>Si ya eres parte de la plataforma, inicia sesión para seguir viendo las peliculas que mas te gustan.</p>
-                <button class="btn transparent" id="sing-in-btn" (click)="modeSingIn()">Sing In</button>
+                <button class="btn transparent" id="sing-in-btn" (click)="modeSingIn()">inicia sesión</button>
             </div>
 
             <img src="../../../../assets/img/auth/sing-up.svg" class="image" alt="">
