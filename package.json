@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
     "firebase": "^8.10.0",
+    "ngx-disqus": "^2.4.3",
     "rxjs": "~6.6.0",
     "sweetalert2": "^11.1.4",
     "swiper": "^6.8.1",

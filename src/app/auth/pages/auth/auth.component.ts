@@ -18,17 +18,11 @@ export class AuthComponent implements OnInit {
   });
 
   Register = new FormGroup({
-    username: new FormControl(''),
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required])
   });
   
-  //==== test user ===========================
-
-  user = {
-    username: 'admin',
-    password: '1234'
-  };
+  
 
   constructor(
     private authSvc: AuthService,
@@ -42,6 +36,7 @@ export class AuthComponent implements OnInit {
     }
   }
 
+  // despliege dinamico entre el form de login y registro
   modeSingUp(){
     const sing_up_btn = document.querySelector("#sing-up-btn");
     const container = document.querySelector(".container");
@@ -67,13 +62,7 @@ export class AuthComponent implements OnInit {
     if(user){
       this.router.navigate(['/home']);
     } else {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'warning',
-        title: 'No terminaste de logearte 😕',
-        showConfirmButton: false,
-        timer: 3000
-      });
+      this.errorLogin();
     }
   }
 
@@ -82,13 +71,7 @@ export class AuthComponent implements OnInit {
     if(user){
       this.router.navigate(['/home']);
     } else {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'warning',
-        title: 'No terminaste de logearte 😕',
-        showConfirmButton: false,
-        timer: 3000
-      });
+      this.errorLogin();
     }
   }
 
@@ -97,13 +80,7 @@ export class AuthComponent implements OnInit {
     if(user){
       this.router.navigate(['/home']);
     } else {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'warning',
-        title: 'No terminaste de logearte 😕',
-        showConfirmButton: false,
-        timer: 3000
-      });
+      this.errorLogin();
     }
   }
   
@@ -143,7 +120,7 @@ export class AuthComponent implements OnInit {
   }
 
   async SingUp(form?){
-    const {username , email , password} = form;
+    const {email , password} = form;
     
     const user = await this.authSvc.register(email, password)
     if(user){
@@ -161,5 +138,15 @@ export class AuthComponent implements OnInit {
         timer: 1500
       });
     }
+  }
+  // muestra este error si en login externos no se completaron
+  errorLogin(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'warning',
+      title: 'No terminaste de logearte 😕',
+      showConfirmButton: false,
+      timer: 3000
+    });
   }
 }

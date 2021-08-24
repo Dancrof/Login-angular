@@ -28,13 +28,13 @@ export class CheckAuthGuard implements CanActivateChild {
     .pipe(tap(authtenticated => {
       if(!authtenticated){
         this.router.navigate(['/auth']);
-        Swal.fire({
+        /*Swal.fire({
           position: 'top-end',
           icon: 'warning',
           title: 'Tu inicio de sesión expiró 😕',
           showConfirmButton: false,
           timer: 3000
-        });
+        });*/
       } 
     })); 
   }
