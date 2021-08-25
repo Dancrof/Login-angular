@@ -1,9 +1,8 @@
 # Movienopolis
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
 # Dato importante
- - debes configurar tus credenciales de firebase en en archivo "environment.ts"
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+ - debes configurar tus credenciales de firebase en en archivo `environment.ts`.
 
 ## Development server
 
