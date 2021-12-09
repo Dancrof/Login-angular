@@ -1,0 +1,81 @@
+<div class="sidebar" [ngClass]="{'close': hideMenu == false}">
+    <div class="logo-details">
+        <i class='bx bx-movie-play' (click)="hideMenu = !hideMenu"></i>
+        <span class="logo_name" (click)="returnHome()">Movienopolis</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="#">
+                <i class='bx bx-grid-alt'></i>
+                <span class="link_name">Panel Inicial</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Panel Inicial</a></li>
+            </ul>
+        </li>
+        <li [ngClass]="{'showMenu':deploySubMenu == false}">
+            <div class="iocn-link">
+                <a>
+                    <i class='bx bx-filter'></i>
+                    <span class="link_name">Categoria</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' (click)="deploySubMenu = !deploySubMenu"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Categoria</a></li>
+                <li><a href="#">Acion</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Terror</a></li>
+                <li><a href="#">Anime</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-message-dots'></i>
+                <span class="link_name">Sugerencias</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Sugerencias</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-support'></i>
+                <span class="link_name">Soporte</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Soporte</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-library'></i>
+                <span class="link_name">Biblioteca</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Biblioteca</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog'></i>
+                <span class="link_name">Setting</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Setting</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img [src]=" user?.photoURL || '../../../assets/img/profile/profile.png'" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">{{user?.displayName || 'Anonimo'}}</div>
+                    <div class="job">{{user?.email}}</div>
+                </div>
+                <i class='bx bx-log-out'(click)="onlogout()"></i>
+            </div>
+        </li>
+    </ul>
+</div>

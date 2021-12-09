@@ -1,0 +1,17 @@
+<div class="container_grid">
+    <div class="container">
+        <app-navbar></app-navbar>
+        <div class="catalogue_content">
+            <div class="card_list" *ngFor="let mo of movies; let i=index">
+                <div>
+                    <img [src]="mo.image" [alt]="mo.title">
+                    <h4>{{mo.title}}</h4>
+                    <a href="">Ver Ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
+</div>
